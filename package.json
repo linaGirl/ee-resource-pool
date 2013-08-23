@@ -1,0 +1,25 @@
+{
+      "name":           "ee-pool"
+    , "description":    "resource pool which tries to have always resources in stock"
+    , "version":        "0.1.0"
+    , "homepage":       "https://github.com/eventEmitter/ee-pool"
+    , "author":         "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
+    , "repository": {
+        "url":          "https://github.com/eventEmitter/ee-pool"
+    }
+    , "engines": {
+        "node":         "*"
+    }
+    , "bugs": {
+        "url":          "https://github.com/eventEmitter/ee-pool/issues"
+    }
+    , "dependencies": {
+          "ee-class":           "*"
+        , "ee-event-emitter":   "*"
+        , "ee-types":           "*"
+        , "ee-log":             "*"
+        , "ee-error":           "*"
+    }
+    , "devDependencies": {}
+    , "optionalDependencies": {}
+}
