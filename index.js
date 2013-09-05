@@ -3,4 +3,4 @@
 	require( "ee-error" );
 
 
-	module.exports = resuire( "./lib/Pool" );
+	module.exports = require( "./lib/Pool" );

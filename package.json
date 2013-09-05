@@ -1,6 +1,6 @@
 {
       "name":           "ee-pool"
-    , "description":    "resource pool which tries to have always resources in stock"
+    , "description":    "resource pool which tends to have always just enough resources in stock"
     , "version":        "0.1.0"
     , "homepage":       "https://github.com/eventEmitter/ee-pool"
     , "author":         "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
@@ -19,6 +19,7 @@
         , "ee-types":           "*"
         , "ee-log":             "*"
         , "ee-error":           "*"
+        , "ee-ttl-queue":       "*"
     }
     , "devDependencies": {}
     , "optionalDependencies": {}
