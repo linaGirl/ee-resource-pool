@@ -27,8 +27,8 @@
 
 
 	var pool = new ResourcePool( {
-		maxRequestsPerSecond: 10000
-		, requestTimeout: 3600000
+		  maxWaitingRequests: 10000
+		, timeout: 3600000
 	} );
 
 
