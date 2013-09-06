@@ -1,17 +1,17 @@
 {
       "name":           "ee-resource-pool"
-    , "description":    "resource pool which tends to have always just enough resources in stock"
+    , "description":    "resource pool with queueing and rate limiting"
     , "version":        "0.1.0"
-    , "homepage":       "https://github.com/eventEmitter/ee--resource-pool"
+    , "homepage":       "https://github.com/eventEmitter/ee-resource-pool"
     , "author":         "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
     , "repository": {
-        "url":          "https://github.com/eventEmitter/ee--resource-pool"
+        "url":          "https://github.com/eventEmitter/ee-resource-pool"
     }
     , "engines": {
         "node":         "*"
     }
     , "bugs": {
-        "url":          "https://github.com/eventEmitter/ee--resource-pool/issues"
+        "url":          "https://github.com/eventEmitter/ee-resource-pool/issues"
     }
     , "dependencies": {
           "ee-class":           "*"
