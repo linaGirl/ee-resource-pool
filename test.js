@@ -29,6 +29,9 @@
 	var pool = new ResourcePool( {
 		  maxWaitingRequests: 10000
 		, timeout: 3600000
+		, on: {
+			idle: function(){ log.info( "idling" ) }
+		}
 	} );
 
 
