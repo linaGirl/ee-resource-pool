@@ -23,7 +23,10 @@ example of a pool of connections, there may never be more than 50 connections op
 	} );
 
 
-	// the pool can request more resources
+	// the pool can request more resources, but if you don't need 
+	// special resources you dont listen for the event and the pool 
+	// will create its own resource representation 
+	// -> this is entirely optional
 	pool.on( "resourceRequest", function( callback ){
 		callback( new Connection() );
 	} );

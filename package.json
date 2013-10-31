@@ -1,26 +1,29 @@
 {
-      "name":           "ee-resource-pool"
-    , "description":    "resource pool with queueing and rate limiting"
-    , "version":        "0.1.3"
-    , "homepage":       "https://github.com/eventEmitter/ee-resource-pool"
-    , "author":         "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
+      "name"                        : "ee-resource-pool"
+    , "description"                 : "resource pool with queueing and rate limiting"
+    , "version"                     : "0.1.4"
+    , "homepage"                    : "https://github.com/eventEmitter/ee-resource-pool"
+    , "author"                      : "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
+    , "licence"                     : "mit"
+    , "os"                          : "linux"
     , "repository": {
-        "url":          "https://github.com/eventEmitter/ee-resource-pool"
+          "url"                     : "https://github.com/eventEmitter/ee-resource-pool.git"
+        , "type"                    : "git"
     }
     , "engines": {
-        "node":         "*"
+        "node"                      : ">=v0.10.17"
     }
     , "bugs": {
-        "url":          "https://github.com/eventEmitter/ee-resource-pool/issues"
+        "url"                       : "https://github.com/eventEmitter/ee-resource-pool/issues"
     }
     , "dependencies": {
-          "ee-class":           "*"
-        , "ee-event-emitter":   "*"
-        , "ee-types":           "*"
-        , "ee-log":             "*"
-        , "ee-error":           "*"
-        , "ee-ttl-queue":       "*"
-        , "ee-rate-limiter":    "*"
+          "ee-class":               "*"
+        , "ee-event-emitter":       "*"
+        , "ee-types":               "*"
+        , "ee-log":                 "*"
+        , "ee-error":               "*"
+        , "ee-ttl-queue":           "*"
+        , "ee-rate-limiter":        "*"
     }
     , "devDependencies": {}
     , "optionalDependencies": {}
