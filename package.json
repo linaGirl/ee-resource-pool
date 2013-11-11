@@ -1,11 +1,10 @@
 {
       "name"                        : "ee-resource-pool"
     , "description"                 : "resource pool with queueing and rate limiting"
-    , "version"                     : "0.1.4"
+    , "version"                     : "0.1.6"
     , "homepage"                    : "https://github.com/eventEmitter/ee-resource-pool"
     , "author"                      : "Michael van der Weg <michael@eventemitter.com> (http://eventemitter.com/)" 
     , "licence"                     : "mit"
-    , "os"                          : "linux"
     , "repository": {
           "url"                     : "https://github.com/eventEmitter/ee-resource-pool.git"
         , "type"                    : "git"
@@ -27,4 +26,7 @@
     }
     , "devDependencies": {}
     , "optionalDependencies": {}
+    , "scripts": {
+        "test"                      : "node test.js"
+    }
 }

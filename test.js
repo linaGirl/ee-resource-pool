@@ -4,8 +4,13 @@
 	var ResourcePool 	= require( "./" )
 		, log 			= require( "ee-log" )
 		, Class			= require( "ee-class" )
+		, assert 		= require( "assert" )
 		, idCounter 	= 0
-		, jobsDone 		= 0;
+		, jobsDone 		= 0
+		, resources		= 0
+		, idling 		= false;
+
+
 
 
 	var Resource = new Class( {
@@ -16,11 +21,12 @@
 
 
 		, do: function(){
-			log( "resource %s is beeing used ...", this.id );
+			//log( "resource %s is beeing used ...", this.id );
 			setTimeout( function(){
-				log( "resource %s is beeing freed, job %s completed ...", this.id, ++jobsDone );
-				this.freeResource();
-			}.bind( this ), 2000 );
+				//log( "resource %s is beeing freed, job %s completed ...", this.id, ++jobsDone );
+				jobsDone++;
+				this.free();
+			}.bind( this ), 500 );
 		}
 	} );
 
@@ -30,7 +36,13 @@
 		  maxWaitingRequests: 10000
 		, timeout: 3600000
 		, on: {
-			  idle: function(){ log.info( "idling" ) }
+			  idle: function(){ 
+			  	idling = true;
+			  	assert.ok( jobsDone === 100, "There should have been 100 jobs done, but i counted " + jobsDone );
+			  	assert.ok( resources === 20, "There should have been 20 resource events emitted, but i counted " + resources );
+			  	process.exit();
+			  }
+			, resource: function(){ resources++; }
 		}
 	} );
 
@@ -47,3 +59,10 @@
 			if ( res ) res.do();
 		} );
 	}
+
+
+
+
+	process.on( "exit", function(){
+		assert.ok( idling === true, "the idle event was not emitted!" )
+	} );

@@ -32,6 +32,15 @@ example of a pool of connections, there may never be more than 50 connections op
 	} );
 
 
+	// if the pool gets a free resource which isn't used by the queue it emits the «resource» event
+	pool.on( "resource", function(){
+		pool.get( function( err, resource ){
+			// you should get that exact resource which triggered the event
+			
+		} );
+	} );
+
+
 	// this code is placed where you request the connections
 	pool.get( function( err, connection ){
 		if ( err ){
