@@ -5,6 +5,11 @@ resource pool for managing shared resources
 ## installation
 
 	npm install ee-resource-pool
+	
+## build status
+
+[![Build Status](https://travis-ci.org/eventEmitter/ee-resource-pool.png?branch=master)](https://travis-ci.org/eventEmitter/ee-resource-pool)
+
 
 ## usage
 
@@ -36,7 +41,7 @@ example of a pool of connections, there may never be more than 50 connections op
 	pool.on( "resource", function(){
 		pool.get( function( err, resource ){
 			// you should get that exact resource which triggered the event
-			
+
 		} );
 	} );
 
