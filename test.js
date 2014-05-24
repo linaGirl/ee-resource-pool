@@ -21,10 +21,10 @@
 
 
 		, do: function(){
-			//log( "resource %s is beeing used ...", this.id );
+			log( "resource %s is beeing used ...", this.id );
 			setTimeout( function(){
-				//log( "resource %s is beeing freed, job %s completed ...", this.id, ++jobsDone );
-				jobsDone++;
+				log( "resource %s is beeing freed, job %s completed ...", this.id, ++jobsDone );
+				
 				this.free();
 			}.bind( this ), 500 );
 		}
@@ -35,16 +35,16 @@
 	var pool = new ResourcePool( {
 		  maxWaitingRequests: 10000
 		, timeout: 3600000
-		, on: {
-			  idle: function(){ 
-			  	idling = true;
-			  	assert.ok( jobsDone === 100, "There should have been 100 jobs done, but i counted " + jobsDone );
-			  	assert.ok( resources === 20, "There should have been 20 resource events emitted, but i counted " + resources );
-			  	process.exit();
-			  }
-			, resource: function(){ resources++; }
-		}
 	} );
+
+	pool.on('idle', function(){ 
+		idling = true;
+		assert.ok( jobsDone === 100, "There should have been 100 jobs done, but i counted " + jobsDone );
+		assert.ok( resources === 10, "There should have been 20 resource events emitted, but i counted " + resources );
+		process.exit();
+	});
+
+	pool.on('resource', function(){ resources++; });
 
 
 	for( var i = 0, l = 10; i < l; i++ ){
