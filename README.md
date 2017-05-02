@@ -1,5 +1,7 @@
 # ee-resource-pool
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/eventEmitter/ee-resource-pool.svg)](https://greenkeeper.io/)
+
 resource pool for managing shared resources 
 
 ## installation
